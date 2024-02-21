@@ -29,9 +29,9 @@ restaurants.each do |attributes|
   puts "Created #{restaurant.name}"
 end
 
-reviews.each do |attributes|
-  review = Restaurant.create!(attributes)
-  puts "Created #{review.name}"
-end
+# reviews.each do |attributes|
+#   review = Restaurant.create!(attributes)
+#   puts "Created #{review.name}"
+# end
 
 puts "Finished!"

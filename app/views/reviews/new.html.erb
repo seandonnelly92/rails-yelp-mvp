@@ -1,0 +1,7 @@
+<h1>New review</h1>
+<%= simple_form_for [@restaurant, @review] do |f| %>
+  <%= f.input :content %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
+
+<%# http://127.0.0.1:3000/restaurants/18/reviews/new %>

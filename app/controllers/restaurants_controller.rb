@@ -18,7 +18,7 @@ class RestaurantsController < ApplicationController
 
   # create posts the new restaurant to the database
   def create
-    @restaurant = Restaurant.new(task_params)
+    @restaurant = Restaurant.new(restaurant_params)
     # Gets the result of the restaurant_params function as parameters
     @restaurant.save
     # Redirect the user to the new restaurant's page
@@ -46,7 +46,7 @@ class RestaurantsController < ApplicationController
   end
 
   def restaurant_params
-    params.require(:restaurant).permit(:title, :details, :address, :phone_number, :category)
+    params.require(:restaurant).permit(:name, :address, :phone_number, :category)
     # Allow us to access these fields from the user's inputs in the form
   end
 end
