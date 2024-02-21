@@ -3,8 +3,11 @@
 <p>Phone number: <%= @restaurant.phone_number %></p>
 <p>Category: <%= @restaurant.category %></p>
 
-
-<%= link_to "Delete this Restaurant",
+<h2>Links</h2>
+<p><%= link_to "Delete this Restaurant",
   restaurant_path(@restaurant),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+%></p>
+
+<p><%= link_to "Back to restaurants", restaurants_path %></p>
+<p><%= link_to "Add a review", new_restaurant_review_path(@restaurant) %></p>
