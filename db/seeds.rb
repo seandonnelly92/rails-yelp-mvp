@@ -11,13 +11,27 @@
 
 puts "Cleaning database..."
 Restaurant.destroy_all
+Review.destroy_all
 
-puts "Creating restaurants..."
-dishoom = {name: "Dishoom", address: "7 Boundary St, London E2 7JE"}
-pizza_east =  {name: "Pizza East", address: "56A Shoreditch High St, London E1 6PQ"}
+puts "Creating restaurants and reviews..."
 
-[dishoom, pizza_east].each do |attributes|
+# RESTAURANTS
+dishoom = {name: "Dishoom", address: "7 Boundary St, London E2 7JE", category: "chinese"}
+pizza_east =  {name: "Pizza East", address: "56A Shoreditch High St, London E1 6PQ", category: "italian"}
+restaurants = [dishoom, pizza_east]
+
+# REVIEWS
+review_one = {content: "It was great", rating: "4", restaurant_id: "1"}
+reviews = [review_one]
+
+restaurants.each do |attributes|
   restaurant = Restaurant.create!(attributes)
   puts "Created #{restaurant.name}"
 end
+
+reviews.each do |attributes|
+  review = Restaurant.create!(attributes)
+  puts "Created #{review.name}"
+end
+
 puts "Finished!"
